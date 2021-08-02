@@ -12,12 +12,12 @@ String conversationsModelToJson(ConversationsModel data) => json.encode(data.toJ
 
 class ConversationsModel {
   ConversationsModel({
-    required this.rows,
-    required this.result,
+     this.rows,
+     this.result,
   });
 
-  int rows;
-  List<Result> result;
+  int? rows;
+  List<Result>? result;
 
   factory ConversationsModel.fromJson(Map<String, dynamic> json) => ConversationsModel(
     rows: json["rows"],
@@ -26,52 +26,50 @@ class ConversationsModel {
 
   Map<String, dynamic> toJson() => {
     "rows": rows,
-    "result": List<dynamic>.from(result.map((x) => x.toJson())),
+    "result": List<dynamic>.from(result!.map((x) => x.toJson())),
   };
 }
 
 class Result {
   Result({
-    required this.messageId,
-    required this.userid,
-    required this.senderName,
-    required this.userPic,
-    required this.subject,
-    required this.message,
-    required this.productVariantId,
-    required this.itemType,
-    required this.sellerId,
-    required this.buyerId,
-    required this.itemId,
-    required this.seenDatetime,
-    required this.sentDatetime,
-    required this.picCheck,
-    required this.productLink,
-    required this.productId,
-    required this.productName,
-    required this.storeName,
+    this.messageId,
+    this.userid,
+    this.senderName,
+    this.userPic,
+    this.subject,
+    this.message,
+    this.productVariantId,
+    this.itemType,
+    this.sellerId,
+    this.buyerId,
+    this.itemId,
+    this.seenDatetime,
+    this.sentDatetime,
+    this.picCheck,
+    this.productLink,
+    this.productId,
+    this.productName,
+    this.storeName,
   });
 
-
-
-  String messageId;
-  String userid;
-  String senderName;
-  dynamic userPic;
-  dynamic subject;
-  String message;
-  String productVariantId;
-  String itemType;
-  String sellerId;
-  String buyerId;
-  String itemId;
+  String? messageId;
+  String? userid;
+  String? senderName;
+  String? userPic;
+  String? subject;
+  String? message;
+  String? productVariantId;
+  String? itemType;
+  String? sellerId;
+  String? buyerId;
+  String? itemId;
   dynamic seenDatetime;
-  DateTime sentDatetime;
-  String picCheck;
-  String productLink;
-  String productId;
-  String productName;
-  String storeName;
+  dynamic sentDatetime;
+  String? picCheck;
+  String? productLink;
+  String? productId;
+  String? productName;
+  String? storeName;
 
   factory Result.fromJson(Map<String, dynamic> json) => Result(
     messageId: json["message_id"],
@@ -86,7 +84,8 @@ class Result {
     buyerId: json["buyer_id"],
     itemId: json["item_id"],
     seenDatetime: json["seen_datetime"],
-    sentDatetime: DateTime.parse(json["sent_datetime"]),
+    sentDatetime: json["sent_datetime"],
+    //sentDatetime: DateTime.parse(json["sent_datetime"]),
     picCheck: json["picCheck"],
     productLink: json["product_link"],
     productId: json["product_id"],
@@ -107,7 +106,7 @@ class Result {
     "buyer_id": buyerId,
     "item_id": itemId,
     "seen_datetime": seenDatetime,
-    "sent_datetime": sentDatetime.toIso8601String(),
+    "sent_datetime": sentDatetime,
     "picCheck": picCheck,
     "product_link": productLink,
     "product_id": productId,

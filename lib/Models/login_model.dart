@@ -1,24 +1,24 @@
 
 class LoginModel {
-  final String email;
-  final String firstname;
-  final String lastname;
-  final String user_type;
-  final String userid;
-  final String user_pic;
-  final String password;
-  final int status;
-  final String msg;
+   String? email;
+   String? firstname;
+   String? lastname;
+   String? user_type;
+   String? userid;
+   String? user_pic;
+   String? password;
+   int? status;
+   String? msg;
 
-  LoginModel({required this.email,
-    required this.firstname,
-    required this.lastname,
-    required this.user_type,
-    required this.userid,
-    required this.user_pic,
-    required this.password,
-    required this.status,
-    required this.msg});
+  LoginModel({ this.email,
+     this.firstname,
+     this.lastname,
+     this.user_type,
+     this.userid,
+     this.user_pic,
+     this.password,
+     this.status,
+     this.msg});
 
   factory LoginModel.fromJson(Map<String, dynamic> json) {
     return LoginModel(
